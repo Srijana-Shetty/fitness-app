@@ -1,5 +1,5 @@
 //connection to rapid API
-
+import axios from 'axios'
 export const exerciseOptions =  {
     method: 'GET',
     params: {limit: '100'},
@@ -22,7 +22,7 @@ export const exerciseOptions =  {
   
   
 export const fetchData = async (url, youtubeOptions) => {
-    const response = await fetch(url, youtubeOptions);  // to fetch url
+    const response = await axios(url, youtubeOptions);  // to fetch url
     const data = await response.json();          // to extract
 
     return data;
